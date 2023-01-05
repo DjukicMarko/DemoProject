@@ -16,6 +16,10 @@ public class VerifyUserIsAbleToCompleteOrderFlowTest extends BaseTest {
         var shoppingCartsItems = productsPage.shoppingCart().getText();
         Assert.assertEquals(shoppingCartsItems, Constants.TWO_ITEMS_IN_CART,
                 String.format("Assertion failed due to wrong number of products in cart, should be %s b ut there are %s.", Constants.TWO_ITEMS_IN_CART, shoppingCartsItems));
+        productsPage.shoppingCart().click();
+        var cartItems = cartPage.getCheckoutList().getText();
+        Assert.assertTrue(cartItems.contains(Constants.BOLT_T_SHIRT_PRODUCT_NAME), "Assertion failed due to lack of product in cart.");
+        Assert.assertTrue(cartItems.contains(Constants.BIKE_LIGHT_PRODUCT_NAME), "Assertion failed due to lack of product in cart.");
         cartPage.getCheckoutButton().click();
         checkoutPage.getFirstNameInput().sendKeys(Constants.JOHN);
         checkoutPage.getLastNameInput().sendKeys(Constants.DOE);

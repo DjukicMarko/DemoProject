@@ -21,4 +21,7 @@ public class Constants {
     public static final String BOLT_T_SHIRT = "sauce-labs-bolt-t-shirt";
     public static final String BIKE_LIGHT = "sauce-labs-bike-light";
     public static final String CART_LIST = "cart_list";
+    public static final String OONSSIE_PRODUCT_NAME = "Sauce Labs Onesie";
+    public static final String BOLT_T_SHIRT_PRODUCT_NAME = "Sauce Labs Bolt T-Shirt";
+    public static final String BIKE_LIGHT_PRODUCT_NAME = "Sauce Labs Bike Light";
 }

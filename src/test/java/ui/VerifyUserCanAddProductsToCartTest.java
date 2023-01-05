@@ -21,10 +21,10 @@ public class VerifyUserCanAddProductsToCartTest extends BaseTest {
         var cart = productsPage.shoppingCart().getText();
         Assert.assertTrue(cart.contains(Constants.THREE_ITEMS_IN_CART),
                 String.format("Assertion failed, wrong number of products in cart, there should be %s, but there is %s", Constants.THREE_ITEMS_IN_CART, cart));
+        productsPage.shoppingCart().click();
         var cartItems = cartPage.getCheckoutList().getText();
-        Assert.assertTrue(cartItems.contains(Constants.BIKE_LIGHT));
-
-        System.out.println("succ");
+        Assert.assertTrue(cartItems.contains(Constants.BIKE_LIGHT_PRODUCT_NAME), "Assertion failed due to lack of product in cart.");
+        Assert.assertTrue(cartItems.contains(Constants.BOLT_T_SHIRT_PRODUCT_NAME), "Assertion failed due to lack of product in cart.");
+        Assert.assertTrue(cartItems.contains(Constants.OONSSIE_PRODUCT_NAME), "Assertion failed due to lack of product in cart.");
     }
-
 }
