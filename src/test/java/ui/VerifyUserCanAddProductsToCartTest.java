@@ -23,6 +23,8 @@ public class VerifyUserCanAddProductsToCartTest extends BaseTest {
                 String.format("Assertion failed, wrong number of products in cart, there should be %s, but there is %s", Constants.THREE_ITEMS_IN_CART, cart));
         var cartItems = cartPage.getCheckoutList().getText();
         Assert.assertTrue(cartItems.contains(Constants.BIKE_LIGHT));
+
+        System.out.println("succ");
     }
 
 }
