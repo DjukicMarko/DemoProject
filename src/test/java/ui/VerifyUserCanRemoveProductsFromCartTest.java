@@ -21,5 +21,7 @@ public class VerifyUserCanRemoveProductsFromCartTest extends BaseTest {
         var numberOfItems = productsPage.shoppingCart().getText();
         Assert.assertEquals(numberOfItems, Constants.ONE_ITEM_IN_CART,
                 String.format("Assertion failed due to wrong number of products left in the cart, should be %s but there is %s.", Constants.ONE_ITEM_IN_CART, numberOfItems));
+        var cart = cartPage.getCheckoutList().getText();
+        Assert.assertTrue(cart.contains(Constants.BOLT_T_SHIRT_PRODUCT_NAME), "Assertion failed due to wrong product left in cart.");
     }
 }
